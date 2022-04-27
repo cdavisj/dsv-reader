@@ -1,0 +1,83 @@
+#!/bin/bash
+IN="in"
+OUT="out"
+GOOD="good"
+# Group A tests
+for index in {1..12}
+do
+    rm -f $OUT/outA$index $OUT/errA$index
+    ../extract -c3 1 2 3 < $IN/test$index > $OUT/outA$index 2> $OUT/errA$index 
+    echo Group A test$index
+    diff $GOOD/outA$index $OUT/outA$index
+    diff $GOOD/errA$index $OUT/errA$index
+done
+# Group B tests
+for index in {1..12}
+do
+    rm -f $OUT/outB$index $OUT/errB$index
+    ../extract -c3 -i: -o: 1 2 3 < $IN/test$index > $OUT/outB$index 2> $OUT/errB$index 
+    echo Group B test$index
+    diff $GOOD/outB$index $OUT/outB$index
+    diff $GOOD/errB$index $OUT/errB$index
+done
+# Group C tests just run , tests
+for index in {1..6}
+do
+    rm -f $OUT/outC$index $OUT/errC$index
+    ../extract -c3 1 < $IN/test$index > $OUT/outC$index 2> $OUT/errC$index 
+    echo GROUP C test$index
+    diff $GOOD/outC$index $OUT/outC$index
+    diff $GOOD/errC$index $OUT/errC$index
+done
+# Group D tests just run , tests
+for index in {1..6}
+do
+    rm -f $OUT/outD$index $OUT/errD$index
+    ../extract -c3 3 2 < $IN/test$index > $OUT/outD$index 2> $OUT/errD$index 
+    echo GROUP D test$index
+    diff $GOOD/outD$index $OUT/outD$index
+    diff $GOOD/errD$index $OUT/errD$index
+done
+# Group T tests using real data from ticket file
+    rm -f $OUT/outT$test1 $OUT/errTtest1
+    ../extract -c43 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 < $IN/tickets > $OUT/outT1 2> $OUT/errT1
+    echo GROUP T test1
+    diff $GOOD/outT1 $OUT/outT1
+    diff $GOOD/errT1 $OUT/errT1
+
+    rm -f $OUT/outT$test2 $OUT/errTtest2
+    ../extract -c43 -s2 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 < $IN/tickets > $OUT/outT2 2> $OUT/errT2
+    echo GROUP T test2
+    diff $GOOD/outT2 $OUT/outT2
+    diff $GOOD/errT2 $OUT/errT2
+
+    rm -f $OUT/outT$test3 $OUT/errTtest3
+    ../extract -c43 -e1 1 2 3 5 6 < $IN/tickets > $OUT/outT3 2> $OUT/errT3
+    echo GROUP T test3
+    diff $GOOD/outT3 $OUT/outT3
+    diff $GOOD/errT3 $OUT/errT3
+
+    rm -f $OUT/outT$test4 $OUT/errTtest4
+    ../extract -c43 -s2 -e20 1 2 3 5 6  < $IN/tickets > $OUT/outT4 2> $OUT/errT4
+    echo GROUP T test4
+    diff $GOOD/outT4 $OUT/outT4
+    diff $GOOD/errT4 $OUT/errT4
+
+    rm -f $OUT/outT$test5 $OUT/errTtest5
+    ../extract -c43 -s2 -e0 1 2 3 5 6  < $IN/tickets > $OUT/outT5 2> $OUT/errT5
+    echo GROUP T test5
+    diff $GOOD/outT5 $OUT/outT5
+    diff $GOOD/errT5 $OUT/errT5
+
+    rm -f $OUT/outT$test6 $OUT/errTtest6
+    ../extract -c44 -s2 -e0 1 2 3 5 6  < $IN/tickets > $OUT/outT6 2> $OUT/errT6
+    echo GROUP T test6
+    diff $GOOD/outT6 $OUT/outT6
+    diff $GOOD/errT6 $OUT/errT6
+
+    rm -f $OUT/outT$test7 $OUT/errTtest7
+    ../extract -c42 -s2 -e0 1 2 3 5 6  < $IN/tickets > $OUT/outT7 2> $OUT/errT7
+    echo GROUP T test7
+    diff $GOOD/outT7 $OUT/outT7
+    diff $GOOD/errT7 $OUT/errT7
+echo All Done

@@ -1,0 +1,13 @@
+../extract: drop line 1, Quoted field not terminated properly
+../extract: drop line 2, A " is not allowed inside unquoted field
+../extract: drop line 3, A " is not allowed inside unquoted field
+../extract: drop line 4, Quoted field missing final quote
+../extract: drop line 6, Quoted field missing final quote
+../extract: drop line 7, Quoted field missing final quote
+../extract: drop line 8, Quoted field missing final quote
+../extract: drop line 9, A " is not allowed inside unquoted field
+../extract: drop line 10, Quoted field missing final quote
+../extract: drop line 16, A " is not allowed inside unquoted field
+../extract: drop line 17, Quoted field not terminated properly
+../extract: drop line 18, Quoted field not terminated properly
+../extract: 12 dropped out of 18 processed

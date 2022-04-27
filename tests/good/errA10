@@ -1,0 +1,8 @@
+../extract: drop line 1, Quoted field not terminated properly
+../extract: drop line 2, Quoted field not terminated properly
+../extract: drop line 3, Quoted field not terminated properly
+../extract: drop line 4, Quoted field not terminated properly
+../extract: drop line 5, Quoted field not terminated properly
+../extract: drop line 6, A " is not allowed inside unquoted field
+../extract: drop line 7, A " is not allowed inside unquoted field
+../extract: 7 dropped out of 7 processed
