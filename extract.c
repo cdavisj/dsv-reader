@@ -1,6 +1,4 @@
 /*
- * Programming assignment 2 sample solution
- *
  * Usage ./extract -c col_cnt col#, ...
  *  col #'s start at 1
  *  dsv file on stdin, accepts only lines with exactly col_cnt columns 
